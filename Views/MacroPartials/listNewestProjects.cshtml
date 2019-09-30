@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@using Umbraco.Core.Models.PublishedContent
+
+@{
+var root= Model.Content.Root();
+var selection = root.FirstChildOfType("projectsOverview")
+.Children()
+.Where(x => x.HasValue("projectStatus") && x.GetProperty("projectStatus").Value<string>() == "Completed")
+.OrderByDescending(x => x.CreateDate).
+Take(5);
+
+            foreach (var item in selection)
+            {
+                <li class="level-@item.Level">
+                    <a href="@item.Url">@item.Name</a>
+                </li>
+            }
+    
+
+}
+
+

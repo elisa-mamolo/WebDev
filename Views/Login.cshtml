@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Login>
+
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+
+
+@* Calls the LoginForm partial view macro*@
+@Html.Partial("LoginForm")
