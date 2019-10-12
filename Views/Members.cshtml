@@ -1,9 +1,8 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Members>
 @using Umbraco.Core.Services;
 @using ContentModels = Umbraco.Web.PublishedModels;
-
 @{
-	Layout = "Master.cshtml";
+    Layout = "Master.cshtml";
 }
 
 @{
@@ -11,22 +10,30 @@ IMemberService memberService= Services.MemberService;
 var members = memberService.GetMembersByGroup("Active");
 }
 
+<div class="mb-3 mt-3 ml-3 ml-5">
+    <h3>Active Members</h3>
 @foreach(var member in members) {
-<p>@member.Name<br>@member.GetValue("address")<br>
-@member.GetValue("zip") @member.GetValue("city")) 
-<br>Email: @member.Email<br>
-</p>
 
+string imageUdi = member.GetValue<string>("photo");
+    if(!string.IsNullOrEmpty(imageUdi)) {
+        string imageUrl = Umbraco.PublishedContent(Udi.Parse(imageUdi)).Url;
+        <img src="@imageUrl?height=200"  />
+    }
+<p>@member.Name<br>@member.GetValue("address")<br>
+@member.GetValue("zip") @member.GetValue("city")
+Email: @member.Email<br>
+
+</p>
 <div>
-Skills: 
-   @if (member.GetValue("skills") != null)
-                {
-                    string[] skills = member.GetValue("skills").ToString().Split(',');
-                    string skillString = string.Join(", ", skills.Select(item => item))
-                    .Replace("\"", "").TrimStart('[').TrimEnd(']');
-                    <span>@skillString</span>
-                }
-                
-               
-     </div>            
-      }
+Skills:
+  @if (member.GetValue("skills") != null)
+               {
+                   string[] skills = member.GetValue("skills").ToString().Split(',');
+                   string skillString = string.Join(", ", skills.Select(item => item))
+                   .Replace("\"", "").TrimStart('[').TrimEnd(']');
+                   <span>@skillString</span>
+                    <br>
+               }
+    </div>
+     }
+     </div>

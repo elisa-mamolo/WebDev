@@ -4,8 +4,20 @@
 	Layout = "Master.cshtml";
 }
 
-<h2>@Model.Name</h2>
+<h3 class="ml-4 mt-3 mb-3">@Model.Name</h3>
 
-    <div>
+    <div class="container-fluid">
+         
+        <div>
         @Html.Action("Index", "ContactFormSurface")
+        </div>
+        
+        <div class="jumbotron col-lg-12">
+    
+        <p class="lead"> Contact us to take part to one of our next projects and became parto of our great Team! We are a group of young students looking for opportunities to grow and develop our prjects.</p>
+        <p><a href="/about-us" target="_blank" class="btn btn-success btn-lg">About Us</a></p>
+        
     </div>
+    </div>
+    
+    

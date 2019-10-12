@@ -365,8 +365,10 @@ MigrationBackup/
 **/App_Data/TEMP/
 **/App_Data/NuGetBackup/
 
+
 # Ignore Umbraco content cache file
 **/App_Data/umbraco.config
+**/App_Data/AarhusWebDevCoop.mdf
 
 # Don't ignore Umbraco packages (VisualStudio.gitignore mistakes this for a NuGet packages folder)
 # Make sure to include details from VisualStudio.gitignore BEFORE this

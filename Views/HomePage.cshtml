@@ -7,5 +7,42 @@
 @Model.Value("projectsTitle")
 
 <div>
+    <div id="banner-image">
+        <img class="w-100" src="@Model.Banner.Url" alt="banner" class="banner"  style="max-height: 780px;"/>
+        <div class="content">
+    
+  </div>
+        </div>
+        <br><br><br>
+        <h1 class="text-center welcome">Welcome to Aarhus developer coop</h1>
+        <br>
+    <h5 class="text-center homepage">We are a group of students from BAAA looking for collaboration on tech projects</h5>
+    <br>
+        
+        <h5>Our newest projects</h5>
     @Umbraco.RenderMacro("listNewestProjects")
+    
 </div>
+
+<!-- Footer -->
+<footer class="page-footer font-small cyan darken-3">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="https://mdbootstrap.com/education/bootstrap/"> ArhusWebDevCoop</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->

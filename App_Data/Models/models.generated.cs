@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "d0c9310815043212")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "69b29a480b329069")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedModels
@@ -124,6 +124,13 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Banner
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("banner")]
+		public IPublishedContent Banner => this.Value<IPublishedContent>("banner");
 
 		///<summary>
 		/// Logo: This is Logo property
@@ -375,6 +382,13 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
+		[ImplementPropertyType("image")]
+		public IPublishedContent Image => this.Value<IPublishedContent>("image");
 
 		///<summary>
 		/// ProjectDescription: This is ProjectDescription property of Project Item doctype
@@ -1107,11 +1121,11 @@ namespace Umbraco.Web.PublishedModels
 		public string Mobile => this.Value<string>("mobile");
 
 		///<summary>
-		/// Photo: Photo member type
+		/// Photo
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.0")]
 		[ImplementPropertyType("photo")]
-		public Umbraco.Core.PropertyEditors.ValueConverters.ImageCropperValue Photo => this.Value<Umbraco.Core.PropertyEditors.ValueConverters.ImageCropperValue>("photo");
+		public Image Photo => this.Value<Image>("photo");
 
 		///<summary>
 		/// Skills: skills property

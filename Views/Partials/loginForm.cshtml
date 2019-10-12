@@ -40,7 +40,7 @@ if (!Members.GetCurrentLoginStatus().IsLoggedIn) {
         @Html.ValidationMessageFor(m => loginModel.Password)
         <br />
 
-        <button>Login</button>
+        <button id="contact-submit" type="submit" class="btn btn-primary input-medium pull-left">Login</button>
     </fieldset>
 }
 else {

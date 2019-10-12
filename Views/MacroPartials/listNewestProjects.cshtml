@@ -1,5 +1,7 @@
 ﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
 @using Umbraco.Core.Models.PublishedContent
+@using ContentModels = Umbraco.Web.PublishedModels;
+
 
 @{
 var root= Model.Content.Root();
@@ -9,12 +11,22 @@ var selection = root.FirstChildOfType("projectsOverview")
 .OrderByDescending(x => x.CreateDate).
 Take(5);
 
-            foreach (var item in selection)
+<div class="container">
+<div class="row">
+            @foreach (var item in selection)
             {
-                <li class="level-@item.Level">
-                    <a href="@item.Url">@item.Name</a>
-                </li>
+               
+                <div class="card col-lg-3">
+                      <img src="" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">@item.Name</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
             }
+            </div>
+             </div>
     
 
 }
